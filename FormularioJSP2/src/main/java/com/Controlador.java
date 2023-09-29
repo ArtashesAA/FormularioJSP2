@@ -38,6 +38,14 @@ public class Controlador extends HttpServlet {
 	    String[] idioma = request.getParameterValues("idioma"); 
 	    String comentario = request.getParameter("comentario");
 		
+	    request.setAttribute("nombre", nombre);
+	    request.setAttribute("apellidos", apellidos);
+	    request.setAttribute("mail", mail);
+	    request.setAttribute("genero", genero);
+	    request.setAttribute("lenguaje", lenguaje);
+	    request.setAttribute("idioma", idioma);
+	    request.setAttribute("comentario", comentario);
+	    
 	    RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/Formulario.jsp");
 
 	    dispatcher.forward(request, response);
